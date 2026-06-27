@@ -1,0 +1,7 @@
+vnstock
+pandas
+numpy
+matplotlib
+scikit-learn
+ta
+torch
