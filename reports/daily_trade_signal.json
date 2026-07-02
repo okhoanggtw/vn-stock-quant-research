@@ -1,0 +1,58 @@
+{
+    "timestamp": "2026-07-03 02:28:29",
+    "fpt_rf": {
+        "prob": 0.45221046696783046,
+        "signal": 0
+    },
+    "fpt_lstm": {
+        "prob": 0.5679587125778198,
+        "signal": 1
+    },
+    "rebalance_orders": [
+        {
+            "ticker": "FPT",
+            "current_weight": "0.0%",
+            "target_weight": "0.0%",
+            "weight_change": "+0.0%",
+            "action": "HOLD",
+            "shares": 0,
+            "estimated_value_vnd": "0 VND"
+        },
+        {
+            "ticker": "HPG",
+            "current_weight": "24.8%",
+            "target_weight": "27.4%",
+            "weight_change": "+2.6%",
+            "action": "BUY",
+            "shares": 111224,
+            "estimated_value_vnd": "2,602,659 VND"
+        },
+        {
+            "ticker": "VNM",
+            "current_weight": "0.0%",
+            "target_weight": "0.0%",
+            "weight_change": "+0.0%",
+            "action": "HOLD",
+            "shares": 0,
+            "estimated_value_vnd": "0 VND"
+        },
+        {
+            "ticker": "SSI",
+            "current_weight": "75.2%",
+            "target_weight": "72.6%",
+            "weight_change": "-2.6%",
+            "action": "SELL",
+            "shares": 96039,
+            "estimated_value_vnd": "2,602,659 VND"
+        },
+        {
+            "ticker": "TCB",
+            "current_weight": "0.0%",
+            "target_weight": "0.0%",
+            "weight_change": "+0.0%",
+            "action": "HOLD",
+            "shares": 0,
+            "estimated_value_vnd": "0 VND"
+        }
+    ]
+}
