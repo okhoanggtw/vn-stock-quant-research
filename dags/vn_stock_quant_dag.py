@@ -26,9 +26,10 @@ with DAG(
     "vn_stock_quant_research_pipeline",
     default_args=default_args,
     description="Pipeline tu dong tai du lieu, train model, backtest va thuc thi rebalance danh muc.",
-    schedule_interval="30 15 * * 1-5",  # Chạy lúc 15:30 từ thứ 2 đến thứ 6
+    schedule_interval="30 8 * * 1-5",  # Chạy lúc 15:30 giờ VN (08:30 UTC) từ thứ 2 đến thứ 6
     start_date=days_ago(1),
     catchup=False,
+    max_active_runs=1,
     tags=["quant", "trading", "mlops"],
 ) as dag:
 
