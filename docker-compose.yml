@@ -5,6 +5,7 @@ services:
   postgres:
     image: postgres:13
     container_name: vn_stock_postgres
+    restart: always
     environment:
       - POSTGRES_USER=airflow
       - POSTGRES_PASSWORD=airflow
@@ -25,6 +26,7 @@ services:
       context: .
       dockerfile: Dockerfile.airflow
     container_name: vn_stock_airflow_webserver
+    restart: always
     command: webserver
     entrypoint: >
       bash -c "airflow db init && airflow users create --username admin --firstname admin --lastname admin --role Admin --email admin@example.com --password admin && airflow webserver"
@@ -53,6 +55,7 @@ services:
       context: .
       dockerfile: Dockerfile.airflow
     container_name: vn_stock_airflow_scheduler
+    restart: always
     command: scheduler
     depends_on:
       postgres:
