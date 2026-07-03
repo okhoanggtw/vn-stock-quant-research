@@ -26,6 +26,7 @@ services:
       context: .
       dockerfile: Dockerfile.airflow
     container_name: vn_stock_airflow_webserver
+    hostname: airflow-webserver
     restart: always
     command: webserver
     entrypoint: >
@@ -55,6 +56,7 @@ services:
       context: .
       dockerfile: Dockerfile.airflow
     container_name: vn_stock_airflow_scheduler
+    hostname: airflow-scheduler
     restart: always
     command: scheduler
     depends_on:
