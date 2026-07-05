@@ -36,43 +36,43 @@ with DAG(
     # Task 1: Lay du lieu raw hang ngay tu vnstock API
     task_get_data = BashOperator(
         task_id="fetch_raw_stock_data",
-        bash_command="python scripts/01_get_data.py",
+        bash_command="cd /opt/airflow && python scripts/01_get_data.py",
     )
 
     # Task 2: Xu ly data, tao chi bao ky thuat va kiem tra tinh dung (ADF Test)
     task_features = BashOperator(
         task_id="feature_engineering_and_adf_test",
-        bash_command="python scripts/02_features.py",
+        bash_command="cd /opt/airflow && python scripts/02_features.py",
     )
 
     # Task 3: Train model Machine Learning (Random Forest) va xuat feature importance
     task_train_ml = BashOperator(
         task_id="train_machine_learning_model",
-        bash_command="python scripts/03_train_ml.py",
+        bash_command="cd /opt/airflow && python scripts/03_train_ml.py",
     )
 
     # Task 4: Train model Deep Learning (LSTM PyTorch)
     task_train_dl = BashOperator(
         task_id="train_deep_learning_lstm_model",
-        bash_command="python scripts/04_train_dl.py",
+        bash_command="cd /opt/airflow && python scripts/04_train_dl.py",
     )
 
     # Task 5: Chay backtest kiem tra chien luoc giao dich va ve bieu do Equity
     task_backtest = BashOperator(
         task_id="backtest_trading_strategies",
-        bash_command="python scripts/05_backtest.py",
+        bash_command="cd /opt/airflow && python scripts/05_backtest.py",
     )
 
     # Task 6: Tối uu hoa danh muc đa tai san bang Scipy SLSQP Solver
     task_portfolio = BashOperator(
         task_id="portfolio_optimization_scipy",
-        bash_command="python scripts/06_portfolio_opt.py",
+        bash_command="cd /opt/airflow && python scripts/06_portfolio_opt.py",
     )
 
     # Task 7: Chay live inference, sinh quyet dinh rebalance va gui Telegram notification
     task_live_inference = BashOperator(
         task_id="live_inference_and_telegram_alert",
-        bash_command="python scripts/08_production_inference.py",
+        bash_command="cd /opt/airflow && python scripts/08_production_inference.py",
     )
 
     # Thiet lap luong phu thuoc giua cac Task (DAG Flow)
